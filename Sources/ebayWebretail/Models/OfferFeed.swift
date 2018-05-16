@@ -8,7 +8,7 @@
 import Foundation
 
 public struct OfferFeed : Feed {
-	var sku : Int?
+	var sku : String?
 	var marketplaceId : String?
 	var format : String?
 	var availableQuantity : Int?
@@ -34,7 +34,7 @@ public struct OfferFeed : Feed {
     
 	public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		sku = try values.decodeIfPresent(Int.self, forKey: .sku)
+		sku = try values.decodeIfPresent(String.self, forKey: .sku)
 		marketplaceId = try values.decodeIfPresent(String.self, forKey: .marketplaceId)
 		format = try values.decodeIfPresent(String.self, forKey: .format)
 		availableQuantity = try values.decodeIfPresent(Int.self, forKey: .availableQuantity)
