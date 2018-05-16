@@ -18,6 +18,12 @@ public struct ListingPolicies : Codable {
 		case returnPolicyId = "returnPolicyId"
 	}
 
+    public init() {
+        self.fulfillmentPolicyId = 37967346010
+        self.paymentPolicyId = 37967344010
+        self.returnPolicyId = 37967343010
+    }
+    
     public init(fulfillmentPolicyId: Int, paymentPolicyId: Int, returnPolicyId: Int) {
         self.fulfillmentPolicyId = fulfillmentPolicyId
         self.paymentPolicyId = paymentPolicyId

@@ -7,10 +7,12 @@
 
 import Foundation
 
+
+
 public struct OfferFeed : Feed {
 	var sku : String?
 	var marketplaceId : String?
-	var format : String?
+	var format : String = "FIXED_PRICE"
 	var availableQuantity : Int?
 	var categoryId : Int?
 	var listingDescription : String?
@@ -36,7 +38,7 @@ public struct OfferFeed : Feed {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		sku = try values.decodeIfPresent(String.self, forKey: .sku)
 		marketplaceId = try values.decodeIfPresent(String.self, forKey: .marketplaceId)
-		format = try values.decodeIfPresent(String.self, forKey: .format)
+		format = try values.decode(String.self, forKey: .format)
 		availableQuantity = try values.decodeIfPresent(Int.self, forKey: .availableQuantity)
 		categoryId = try values.decodeIfPresent(Int.self, forKey: .categoryId)
 		listingDescription = try values.decodeIfPresent(String.self, forKey: .listingDescription)

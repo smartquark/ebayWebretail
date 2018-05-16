@@ -68,15 +68,10 @@ final class ebayWebretailTests: XCTestCase {
         var feed = OfferFeed()
         feed.sku = "GAIA12322"
         feed.marketplaceId = config.marketplaceId
-        feed.format = "FIXED_PRICE"
         feed.availableQuantity = 10
         feed.categoryId = 30120
         feed.listingDescription = "GAIA: Single product no variants for test."
-        feed.listingPolicies = ListingPolicies(
-            fulfillmentPolicyId: 37967346010,
-            paymentPolicyId: 37967344010,
-            returnPolicyId: 37967343010
-        )
+        feed.listingPolicies = ListingPolicies()
         let price = Price(currency: "EUR", value: 100.0)
         feed.pricingSummary = PricingSummary(price: price)
         feed.quantityLimitPerBuyer = 2
